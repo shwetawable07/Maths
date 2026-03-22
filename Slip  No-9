@@ -1,0 +1,224 @@
+Question 1-1
+
+import matplotlib.pyplot as plt
+
+x = [1,2,3,4,5]
+y1 = [2,4,6,8,10]
+y2 = [1,3,5,7,9]
+
+plt.plot(x, y1, label="Line 1")
+plt.plot(x, y2, label="Line 2")
+
+plt.title("Multiple Line Graph")
+plt.legend()
+plt.show()
+
+
+
+Question 1-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2*np.pi, 100)
+y = np.cos(x)
+
+plt.plot(x, y)
+plt.title("y = cos(x)")
+plt.show()
+
+
+
+Question 1-3
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-10, 10, 50)
+y = np.linspace(-10, 10, 50)
+X, Y = np.meshgrid(x, y)
+Z = X * Y
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_wireframe(X, Y, Z)
+
+plt.show()
+
+
+Question 1-4
+
+from sympy import Point
+
+A = Point(2, 6)
+B = Point(8, 4)
+
+mid = A.midpoint(B)
+
+print("Midpoint:", mid)
+
+Question 1-5
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+points = np.array([[0,0],[2,0],[2,2],[0,2]])
+
+theta = np.pi/2
+rot = np.dot(points, [[np.cos(theta), -np.sin(theta)],
+                      [np.sin(theta),  np.cos(theta)]])
+
+def plot_shape(p, label):
+    p = np.vstack([p, p[0]])
+    plt.plot(p[:,0], p[:,1], label=label)
+
+plot_shape(points, "Original")
+plot_shape(rot, "Rotated")
+
+plt.legend()
+plt.show()
+
+
+
+Question 2-1
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+points = np.array([[1,1],[5,1],[5,3],[1,3]])
+
+# Reflection y-axis
+ref = points * [-1,1]
+
+# Scaling (3,2)
+scale = ref * [3,2]
+
+# Translation (+2, +3)
+trans = scale + [2,3]
+
+def plot_shape(p, label):
+    p = np.vstack([p, p[0]])
+    plt.plot(p[:,0], p[:,1], label=label)
+
+plot_shape(points, "Original")
+plot_shape(trans, "Transformed")
+
+plt.legend()
+plt.show()
+
+
+
+
+Question 2-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-10, 10, 100)
+y = 3*x - 2
+
+plt.plot(x, y)
+plt.title("y = 3x - 2")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
