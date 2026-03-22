@@ -1,0 +1,265 @@
+Question No 1-1
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Data
+x1 = np.linspace(-5, 5, 100)
+y1 = x1**3
+
+x2 = np.linspace(1, 10, 100)
+y2 = np.exp(x2)
+
+# Subplots (2 rows, 1 column)
+plt.subplot(2,1,1)
+plt.plot(x1, y1)
+plt.title("f(x) = x^3")
+
+plt.subplot(2,1,2)
+plt.plot(x2, y2)
+plt.title("g(x) = e^x")
+
+plt.tight_layout()
+plt.show()
+
+
+
+Question No 1-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(1, 20, 100)
+y = 2*x + 5
+
+plt.plot(x, y, linestyle='--', color='skyblue')
+plt.title("y = 2x + 5")
+plt.show()
+
+
+
+Question No 1-3
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2*np.pi, 50)
+y = np.linspace(0, 2*np.pi, 50)
+X, Y = np.meshgrid(x, y)
+Z = np.cos(X**2 + Y**2)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_wireframe(X, Y, Z)
+
+plt.show()
+
+
+
+Question No 1-4
+
+from sympy import Point, Polygon
+
+A = Point(0,0)
+B = Point(1,0)
+C = Point(1,1)
+D = Point(0,1)
+
+square = Polygon(A,B,C,D)
+
+print("Area:", square.area)
+print("Perimeter:", square.perimeter)
+print("Centroid:", square.centroid)
+
+
+
+Question No 1-5
+
+import sympy as sp
+
+P = sp.Point(2, -1, 3)
+
+# Rotation matrix (90° about Z-axis)
+theta = sp.pi/2
+R = sp.Matrix([[sp.cos(theta), -sp.sin(theta), 0],
+               [sp.sin(theta),  sp.cos(theta), 0],
+               [0, 0, 1]])
+
+rotated = R * sp.Matrix(P)
+
+print("Rotated Point:", rotated)
+
+
+
+Question No 2-1
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+points = np.array([[-2,7], [-5,-1], [4,3]])
+
+# Shearing
+shear = np.dot(points, [[1,3],[4,1]])
+
+# Reflection (x-axis)
+reflect = shear * [1,-1]
+
+# Translation (y +7)
+translate = reflect + [0,7]
+
+def plot_shape(p, label):
+    p = np.vstack([p, p[0]])
+    plt.plot(p[:,0], p[:,1], label=label)
+
+plot_shape(points, "Original")
+plot_shape(translate, "Transformed")
+
+plt.legend()
+plt.show()
+
+
+
+Question No 2-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = 8
+theta = np.linspace(0, 2*np.pi, 75)
+
+x = r*np.cos(theta)
+y = r*np.sin(theta)
+
+plt.plot(x, y)
+plt.gca().set_aspect('equal')
+plt.title("Circle x^2 + y^2 = 64")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
