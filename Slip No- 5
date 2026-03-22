@@ -1,0 +1,164 @@
+Question No 1-1
+
+import matplotlib.pyplot as plt
+
+years = [2016, 2017, 2018, 2019, 2020]
+sales = [45, 50, 60, 55, 70]
+
+colors = ['red', 'blue', 'green', 'orange', 'purple']
+
+plt.bar(years, sales, color=colors)
+plt.title("Newspaper Sales")
+plt.xlabel("Year")
+plt.ylabel("Sales")
+plt.show()
+
+
+Question No 1-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-20, 20, 100)
+y = x**2 + 2*x + 5
+
+plt.plot(x, y, 'r--')
+plt.title("y = x^2 + 2x + 5")
+plt.show()
+
+
+
+Question No 1-3
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-30, 30, 50)
+y = np.linspace(-30, 30, 50)
+X, Y = np.meshgrid(x, y)
+
+Z = np.sqrt(np.abs(X**2 - Y**2))  # avoid negative inside sqrt
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z)
+
+plt.show()
+
+
+Question No 1-4
+
+from sympy import Point, Line
+
+A = Point(2, -4)
+B = Point(2, 8)
+
+P = Point(5, 4)
+Q = Point(-8, 3)
+
+line1 = Line(A, B)
+line2 = Line(P, Q)
+
+# Intersection
+intersection = line1.intersection(line2)
+
+# Distance from A to line PQ
+distance = line2.distance(A)
+
+print("Line AB:", line1)
+print("Line PQ:", line2)
+print("Intersection:", intersection)
+print("Distance:", distance)
+
+
+
+Question No 1-5
+
+from sympy import Point, Polygon
+
+O = Point(0,0)
+A = Point(7,-2)
+B = Point(3,6)
+
+triangle = Polygon(O,A,B)
+
+# Scaling (x*3, y*-7)
+scaled = [Point(p.x*3, p.y*(-7)) for p in triangle.vertices]
+
+# Reflection y = x (swap x,y)
+reflected = [Point(p.y, p.x) for p in triangle.vertices]
+
+print("Scaled:", scaled)
+print("Reflected:", reflected)
+
+
+
+Question No 2-1
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+A = np.array([1,2,3])
+B = np.array([4,5,6])
+
+# Reflection through XY plane (z → -z)
+A_ref = [A[0], A[1], -A[2]]
+B_ref = [B[0], B[1], -B[2]]
+
+# Shearing (y proportional to z, factor 4)
+A_shear = [A[0], A[1] + 4*A[2], A[2]]
+B_shear = [B[0], B[1] + 4*B[2], B[2]]
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Original
+ax.plot([A[0],B[0]], [A[1],B[1]], [A[2],B[2]], label="Original")
+
+# Reflected
+ax.plot([A_ref[0],B_ref[0]], [A_ref[1],B_ref[1]], [A_ref[2],B_ref[2]], label="Reflected")
+
+# Sheared
+ax.plot([A_shear[0],B_shear[0]], [A_shear[1],B_shear[1]], [A_shear[2],B_shear[2]], label="Sheared")
+
+ax.legend()
+plt.show()
+
+
+
+Question No 2-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 30, 50)
+y1 = np.sqrt(8*x)
+y2 = -np.sqrt(8*x)
+
+plt.plot(x, y1)
+plt.plot(x, y2)
+
+plt.title("Parabola y^2 = 8x")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
