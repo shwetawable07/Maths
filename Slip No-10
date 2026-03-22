@@ -1,0 +1,185 @@
+Question 1-1
+
+import matplotlib.pyplot as plt
+
+x = [1,2,3,4,5]
+y = [5,7,6,8,7]
+
+plt.scatter(x, y, color='red')
+plt.title("Scatter Plot")
+plt.xlabel("X values")
+plt.ylabel("Y values")
+plt.show()
+
+Question 1-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-2*np.pi, 2*np.pi, 100)
+y = np.tan(x)
+
+plt.plot(x, y)
+plt.title("y = tan(x)")
+plt.ylim(-10,10)  # limit for better view
+plt.show()
+
+
+Question 1-3
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-5, 5, 50)
+y = np.linspace(-5, 5, 50)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(X*Y)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z)
+
+plt.show()
+
+
+Question 1-4
+
+from sympy import Point, Line
+
+P = Point(3, 4)
+A = Point(1, 1)
+B = Point(5, 5)
+
+line = Line(A, B)
+distance = line.distance(P)
+
+print("Distance:", distance)
+
+
+
+Question 1-5
+
+from sympy import Point
+
+P = Point(4, 7)
+
+# Reflection about y=x → swap coordinates
+reflected = Point(P.y, P.x)
+
+print("Reflected Point:", reflected)
+
+
+
+Question 2-1
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+points = np.array([[0,0],[3,0],[3,3],[0,3]])
+
+# Rotation (180°)
+theta = np.pi
+rot = np.dot(points, [[np.cos(theta), -np.sin(theta)],
+                      [np.sin(theta),  np.cos(theta)]])
+
+# Scaling (0.5, 0.5)
+scaled = rot * 0.5
+
+# Translation (+2, +2)
+translated = scaled + [2,2]
+
+def plot_shape(p, label):
+    p = np.vstack([p, p[0]])
+    plt.plot(p[:,0], p[:,1], label=label)
+
+plot_shape(points, "Original")
+plot_shape(translated, "Transformed")
+
+plt.legend()
+plt.show()
+
+
+
+Question 2-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = 7
+theta = np.linspace(0, 2*np.pi, 100)
+
+x = r*np.cos(theta)
+y = r*np.sin(theta)
+
+plt.plot(x, y)
+plt.gca().set_aspect('equal')
+plt.title("Circle x^2 + y^2 = 49")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
