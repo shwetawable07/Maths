@@ -1,0 +1,163 @@
+Question 1-1
+
+import matplotlib.pyplot as plt
+fruits = ['Mango', 'Grapes', 'Banana', 'Other']
+students = [65, 30, 5, 20]
+plt.pie(students, labels=fruits, autopct='%1.1f%%')
+plt.title("Students Preference for Fruits")
+plt.show()
+
+
+
+Question 1-2
+
+import matplotlib.pyplot as plt
+x = [2, 3]
+y = [4, 6]
+plt.plot(x, y, marker='o', color='green')
+plt.title("Line joining (2,4) and (3,6)")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid()
+plt.show()
+
+
+
+Question 1-3
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+x = np.linspace(-15, 15, 50)
+y = np.linspace(-15, 15, 50)
+x, y = np.meshgrid(x, y)
+z = -x**3 - y**3
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_wireframe(x, y, z)
+ax.set_title("3D Wireframe Plot")
+plt.show()
+
+
+
+
+Question 1-4
+
+from sympy import Point, Polygon
+A = Point(6, 2)
+B = Point(4, 8)
+C = Point(12, 9)
+D = Point(5, 3)
+quad = Polygon(A, B, C, D)
+print("Area:", quad.area)
+print("Perimeter:", quad.perimeter)
+
+
+
+Question 1-5
+
+from sympy import Point, Triangle
+P = Point(1, 1)
+Q = Point(5, 1)
+R = Point(5, 5)
+tri = Triangle(P, Q, R)
+print("Area:", tri.area)
+print("Circumcircle:", tri.circumcircle)
+print("Right angled:", tri.is_right())
+P_new = Point(P.x*2, P.y*4)
+Q_new = Point(Q.x*2, Q.y*4)
+R_new = Point(R.x*2, R.y*4)
+print("Scaled Points:", P_new, Q_new, R_new)
+
+
+
+
+Question 2-1
+
+import matplotlib.pyplot as plt
+import numpy as np
+points = np.array([[1, 2], [4, 2], [4, 4], [2, 5]])
+points = np.vstack([points, points[0]])
+shx = 3
+shy = -2
+sheared = []
+for x, y in points:
+    x_new = x + shx * y
+    y_new = y + shy * x
+    sheared.append([x_new, y_new])
+sheared = np.array(sheared)
+plt.plot(points[:,0], points[:,1], label="Original")
+plt.plot(sheared[:,0], sheared[:,1], label="Sheared")
+plt.axhline(0)
+plt.axvline(0)
+plt.legend()
+plt.grid()
+plt.show()
+
+
+
+
+Question 2-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 80, 80)
+y = np.sqrt(16 * x)
+plt.plot(x, y, label="Upper curve")
+plt.plot(x, -y, label="Lower curve")
+plt.title("Parabola y^2 = 16x")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.grid()
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
