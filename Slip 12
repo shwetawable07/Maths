@@ -1,0 +1,141 @@
+Question 1-1
+
+import matplotlib.pyplot as plt
+subjects = ['Mathematics', 'English', 'Biology', 'Physics', 'Chemistry']
+marks = [84, 48, 60, 35, 72]
+plt.pie(marks, labels=subjects, autopct='%1.1f%%')
+plt.title('Marks Distribution')
+plt.show()
+
+
+
+Question 1-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(-np.pi, np.pi, 100)
+y = np.cos(2*x)
+plt.plot(x, y, 'r--')  # red dashed line
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('y = cos(2x)')
+plt.show()
+
+
+
+Question 1-3
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(-10, 10, 50)
+y = np.linspace(-10, 10, 50)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(X**2 + Y**2)
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_wireframe(X, Y, Z, color='brown')
+ax.set_title('Wireframe Plot')
+plt.show()
+
+
+
+Question 1-4
+
+from sympy import Point
+P = Point(0,0)
+Q = Point(1,1)
+R = Point(-7,5)
+print("Distance PQ:", P.distance(Q))
+print("Distance PR:", P.distance(R))
+mid = Q.midpoint(R)
+print("Midpoint of QR:", mid)
+
+
+
+Question 1-5
+
+from sympy import Point, Polygon
+from sympy import pi
+A = Point(1,1)
+B = Point(-1,1)
+C = Point(-1,-1)
+D = Point(1,-1)
+poly = Polygon(A, B, C, D)
+print("Angles at vertices:")
+for angle in poly.angles.values():
+    print(angle)
+rotated = poly.rotate(pi/3)
+print("Rotated Polygon:", rotated)
+
+
+
+
+Question 2-1
+
+import matplotlib.pyplot as plt
+import numpy as np
+P = np.array([1,3])
+Q = np.array([3,3])
+R = np.array([4,5])
+triangle = np.array([P,Q,R,P])
+ref1 = triangle[:, [1,0]]
+ref2 = -triangle[:, [1,0]]
+plt.plot(triangle[:,0], triangle[:,1], label="Original")
+plt.plot(ref1[:,0], ref1[:,1], label="y = x")
+plt.plot(ref2[:,0], ref2[:,1], label="y = -x")
+plt.legend()
+plt.title("Triangle Reflections")
+plt.show()
+
+
+
+
+Question 2-2
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+theta = np.linspace(0, 2*np.pi, 50)
+x = 4 * np.cos(theta)
+y = 4 * np.sin(theta)
+plt.plot(x, y)
+plt.title("Circle x^2 + y^2 = 16")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.gca().set_aspect('equal')
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
