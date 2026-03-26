@@ -1,0 +1,168 @@
+Question 1-1
+
+import matplotlib.pyplot as plt
+subjects = ['History', 'Geography', 'English', 'Sociology', 'Psychology']
+students = [168, 90, 195, 95, 46]
+plt.figure(figsize=(6,6))
+plt.pie(students, labels=subjects, autopct='%1.1f%%', radius=0.7)
+plt.title("Students Distribution by Subject")
+plt.show()
+
+
+
+Question 1-2
+
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(5, 10, 100)
+y = x**2 + 5*x
+plt.plot(x, y, linestyle='dotted')
+plt.title("Graph of x^2 + 5x")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid()
+plt.show()
+
+
+
+Question 1-3
+
+from sympy import Point, Polygon
+import matplotlib.pyplot as plt
+A = Point(1, 1)
+B = Point(1, 6)
+C = Point(6, 1)
+D = Point(6, 6)
+poly = Polygon(A, B, D, C)
+x = [p.x for p in poly.vertices] + [poly.vertices[0].x]
+y = [p.y for p in poly.vertices] + [poly.vertices[0].y]
+plt.plot(x, y, color='black')
+plt.scatter(x, y)
+plt.title("Quadrilateral ABCD")
+plt.grid()
+plt.show()
+
+
+
+
+
+Question 1-4
+
+import numpy as np
+import matplotlib.pyplot as plt
+points = np.array([[1,1],[1,4],[4,1],[4,4]])
+shx = 3
+shy = 7
+shear_matrix = np.array([[1, shx],
+                         [shy, 1]])
+transformed = np.dot(points, shear_matrix)
+plt.plot(*zip(*(list(points)+[points[0]])), label='Original')
+plt.plot(*zip(*(list(transformed)+[transformed[0]])), label='Sheared')
+plt.legend()
+plt.grid()
+plt.title("Shearing Transformation")
+plt.show()
+
+
+
+
+Question 1-5
+
+import numpy as np
+A = np.array([-3, 5])
+B = np.array([3, 3])
+T = np.array([[1, 3],
+              [4, 1]])
+A1 = np.dot(T, A)
+B1 = np.dot(T, B)
+midpoint = (A1 + B1) / 2
+print("Transformed A:", A1)
+print("Transformed B:", B1)
+print("Midpoint:", midpoint)
+
+
+
+Question 2-1
+
+import numpy as np
+import matplotlib.pyplot as plt
+triangle = np.array([[4,4],[2,4],[4,2]])
+theta = np.pi/2
+rotation = np.array([[np.cos(theta), -np.sin(theta)],
+                     [np.sin(theta),  np.cos(theta)]])
+rotated = np.dot(triangle, rotation)
+scaled = rotated * 3
+def plot_shape(points, label):
+    pts = list(points) + [points[0]]
+    x, y = zip(*pts)
+    plt.plot(x, y, label=label)
+plot_shape(triangle, "Original")
+plot_shape(rotated, "Rotated")
+plot_shape(scaled, "Scaled")
+plt.axhline(0)
+plt.axvline(0)
+plt.legend()
+plt.grid()
+plt.title("Triangle Transformation")
+plt.show()
+
+
+
+
+
+Question 2-2
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 100, 100)
+y = np.sqrt(32 * x)
+plt.plot(x, y)
+plt.plot(x, -y)
+plt.title("Parabola y^2 = 32x")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid()
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
