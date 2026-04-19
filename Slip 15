@@ -1,118 +1,56 @@
-Question 1-1
-
+Q.1] 1)
 import matplotlib.pyplot as plt
-games = ['Cricket', 'Football', 'Hockey', 'Chess', 'Tennis']
+games = ["Cricket", "Football", "Hockey", "Chess", "Tennis"]
 students = [125, 59, 28, 19, 36]
 plt.barh(games, students)
 plt.xlabel("Number of Students")
-plt.title("Students Participating in Games")
+plt.ylabel("Games")
+plt.title("Students in Games")
 plt.show()
-
-
-
-Question 1-2
-
+2)
 import numpy as np
 import matplotlib.pyplot as plt
 x = np.linspace(-3*np.pi, 3*np.pi, 100)
 y = np.sin(x) + np.cos(x)
-plt.plot(x, y, linestyle='dashed')
+plt.plot(x, y, linestyle='-.')
+plt.xlabel("x") 
+plt.ylabel("y")
 plt.title("f(x) = sin(x) + cos(x)")
-plt.xlabel("x")
-plt.ylabel("f(x)")
-plt.grid()
 plt.show()
-
-
-
-Question 1-3
-
+3)
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 x = np.linspace(-5, 5, 50)
 y = np.linspace(-5, 5, 50)
-x, y = np.meshgrid(x, y)
-z = x**4 - y**2
+X, Y = np.meshgrid(x, y)
+Z = X**4 - Y**2
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(x, y, z)
-ax.set_title("3D Surface Plot")
+ax.plot_surface(X, Y, Z, color='black')
+plt.title("Surface Plot")
 plt.show()
-
-
-
-
-Question 1-4
-
+4)
 from sympy import Point, Segment
 P = Point(7, 3)
 Q = Point(7, -5)
 R = Point(7, 1)
 print("Collinear:", Point.is_collinear(P, Q, R))
 seg = Segment(P, Q)
-mid = seg.midpoint
-print("Midpoint of PQ:", mid)
-
-
-
-
-Question 1-5
-
-from sympy import Point, Triangle
-A = Point(2, 2)
-B = Point(4, 2)
-C = Point(3, 6)
-triangle = Triangle(A, B, C)
-centroid = triangle.centroid
-print("Centroid:", centroid)
-A_new = A.translate(2, 0)
-B_new = B.translate(2, 0)
-C_new = C.translate(2, 0)
-print("Translated Points:", A_new, B_new, C_new)
-
-
-
-Question 2-1
-
+print("Midpoint of PQ =", seg.midpoint)
+Q.2] 1)
 import matplotlib.pyplot as plt
 import numpy as np
-P = np.array([5, -8])
-ref = np.array([-P[0], P[1]])
-scale = np.array([4*P[0], P[1]])
-theta = np.pi / 2
-rot = np.array([
-    P[0]*np.cos(theta) - P[1]*np.sin(theta),
-    P[0]*np.sin(theta) + P[1]*np.cos(theta)
-])
-plt.scatter(*P, label="Original")
-plt.scatter(*ref, label="Reflection")
-plt.scatter(*scale, label="Scaling")
-plt.scatter(*rot, label="Rotation")
+x, y = 5, -8 
+x_ref, y_ref = -x, y
+x_scale, y_scale = 4*x, y
+theta = np.pi/2
+x_rot = x*np.cos(theta) - y*np.sin(theta)
+y_rot = x*np.sin(theta) + y*np.cos(theta)
+plt.scatter(x, y, label="Original")
+plt.scatter(x_ref, y_ref, label="Reflection")
+plt.scatter(x_scale, y_scale, label="Scaling")
+plt.scatter(x_rot, y_rot, label="Rotation")
 plt.legend()
-plt.grid()
-plt.show()
-
-
-
-
-Question 2-2
-
-import numpy as np
-import matplotlib.pyplot as plt
-y = np.linspace(0, 30, 50)
-x = y**2 / 20
-plt.plot(x, y)
-plt.title("Parabola y^2 = 20x")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.grid()
-plt.show()
-
-
-
-
-
-
-
-
+plt.title("Point Transformations")
+plt.show() 
