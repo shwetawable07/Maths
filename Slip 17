@@ -1,184 +1,59 @@
-Question 1-1
-
+Q.1] 1)
 import matplotlib.pyplot as plt
-subjects = ['Computer', 'Mathematics', 'Electronics', 'Statistics', 'English']
+subjects = [“Computer”, “Mathematics”, “Electronics”,
+“Statistics”, “English”]
 marks = [60, 80, 65, 55, 70]
 explode = (0.1, 0.1, 0.1, 0.1, 0.1)
-plt.pie(marks, labels=subjects, autopct='%1.1f%%', explode=explode)
-plt.title("Marks Distribution")
+plt.pie(marks, labels=subjects, autopct=’%1.1f%%’,
+explode=explode)
+plt.title(“Subject Marks”)
 plt.show()
-
-
-Question 1-2
-
+2)
 import numpy as np
 import matplotlib.pyplot as plt
-x = np.linspace(-5*np.pi, 5*np.pi, 200)
+x = np.linspace(-5*np.pi, 5*np.pi, 100)
 y = np.sin(3*x + 1)
-plt.plot(x, y, linestyle='dotted', color='red')
-plt.title("f(x) = sin(3x + 1)")
-plt.xlabel("x")
-plt.ylabel("f(x)")
-plt.grid()
+plt.plot(x, y, color=’red’, linestyle=’:’)
+plt.xlabel(“x”)
+plt.ylabel(“y”)
+plt.title(“f(x) = sin(3x + 1)”) 
 plt.show()
-
-
-
-
-Question 1-3
-
+3)
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 x = np.linspace(-10, 20, 50)
 y = np.linspace(-10, 20, 50)
-x, y = np.meshgrid(x, y)
-z = -(x**2 + y**2)
+X, Y = np.meshgrid(x, y)
+Z = -(X**2 + Y**2)
 fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(x, y, z)
-ax.set_title("Surface Plot")
+ax = fig.add_subplot(111, projection=’3d’)
+ax.plot_surface(X, Y, Z)
+plt.title(“Surface Plot”)
 plt.show()
-
-
-
-Question 1-4
-
+4)
 from sympy import symbols, Eq, solve
-x, y = symbols('x y')
-eq1 = Eq(x + y, 2)
+x, y = symbols(‘x y’)
+eq1 = Eq(x + y, 2) 
 eq2 = Eq(3*x + 2*y, 1)
-solution = solve((eq1, eq2), (x, y))
-print("Intersection Point:", solution)
-print("Slope of L1:", -1)
-print("Slope of L2:", -3/2)
-
-
-
-Question 1-5
-
-from sympy import Point, Polygon
-import sympy as sp
-center = Point(1, 2)
-radius = 1
-n = 6
-vertices = []
-for i in range(n):
-    angle = 2 * sp.pi * i / n
-    x = center.x + radius * sp.cos(angle)
-    y = center.y + radius * sp.sin(angle)
-    vertices.append(Point(x, y))
-hexagon = Polygon(*vertices)
-print("Area:", hexagon.area)
-print("Perimeter:", hexagon.perimeter)
-print("Centroid:", hexagon.centroid)
-
-
-
-
-Question 2-1
-
-import numpy as np
+sol = solve((eq1, eq2), (x, y))
+print(“Intersection =”, sol)
+print(“Slope of L1 =”, -1)
+print(“Slope of L2 =”, -3/2)
+Q.2] 1)
 import matplotlib.pyplot as plt
+import numpy as np 
 P = np.array([5, -2])
 Q = np.array([3, 2])
-def transform(point):
-    x, y = point
-    x, y = -x, -y
-    x = 4 * x
-    x, y = y, x
-    return np.array([x, y])
-P_new = transform(P)
-Q_new = transform(Q)
-plt.plot([P[0], Q[0]], [P[1], Q[1]], label="Original", marker='o')
-plt.plot([P_new[0], Q_new[0]], [P_new[1], Q_new[1]], label="Transformed", marker='o')
-plt.axhline(0)
-plt.axvline(0)
+R = np.array([[-1, 0], [0, -1]])
+P1 = R @ P
+Q1 = R @ Q
+P2 = np.array([4*P1[0], P1[1]])
+Q2 = np.array([4*Q1[0], Q1[1]])
+P3 = np.array([P2[1], P2[0]])
+Q3 = np.array([Q2[1], Q2[0]])
+plt.plot([P[0], Q[0]], [P[1], Q[1]], label=”Original”)
+plt.plot([P3[0], Q3[0]], [P3[1], Q3[1]], label=”Transformed”)
 plt.legend()
-plt.grid()
-plt.show()
-
-
-
-
-Question 2-2
-
-import numpy as np
-import matplotlib.pyplot as plt
-theta = np.linspace(0, 2*np.pi, 100)
-r = 7
-x = r * np.cos(theta)
-y = r * np.sin(theta)
-plt.plot(x, y)
-plt.gca().set_aspect('equal', adjustable='box')
-plt.title("Circle x^2 + y^2 = 49")
-plt.grid()
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+plt.title(“Line Transformations”)
+plt.show() 
