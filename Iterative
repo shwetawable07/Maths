@@ -1,0 +1,449 @@
+slip-1
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-5, 5, 100)
+for x in x_values:
+    y = (25 - x**2)**0.5   # upper semicircle
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_points_lower = [-y for y in y_points]
+plt.plot(x_points, y_points_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 25")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+slip-2
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-7, 7, 100)
+for x in x_values:
+    y = (49 - x**2) ** 0.5  
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 49")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+slip-3
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 20, 50)
+for x in x_values:
+    y = (12 * x) ** 0.5   
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y)   
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 12x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+
+slip-4
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-8, 8, 75)
+for x in x_values:
+    y = (64 - x**2) ** 0.5   
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 64")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+
+slip-5
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 30, 50)
+for x in x_values:
+    y = (8 * x) ** 0.5  
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y) 
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 8x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+
+slip-6
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-6, 6, 75)
+for x in x_values:
+    y = (36 - x**2) ** 0.5   # upper semicircle
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 36")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+slip-7
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 40, 50)
+for x in x_values:
+    y = (20 * x) ** 0.5   
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y)   
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 20x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+
+
+slip-8
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-9, 9, 100)
+for x in x_values:
+    y = (81 - x**2) ** 0.5   
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 81")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+slip-9
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 30, 75)
+for x in x_values:
+    y = (36 * x) ** 0.5   
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y) 
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 36x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+
+slip-10
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-12, 12, 100)
+for x in x_values:
+    y = (144 - x**2) ** 0.5 
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 144")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+slip-11
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 50, 50)
+for x in x_values:
+    y = (40 * x) ** 0.5   # y = sqrt(40x)
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y)  
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 40x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+slip-12
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-4, 4, 50)
+for x in x_values:
+    y = (16 - x**2) ** 0.5  
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 16")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+slip-13
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-5, 5, 50)
+for x in x_values:
+    y = (25 - x**2) ** 0.5   
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 25")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+
+slip-14
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(4, 16, 50)
+for x in x_values:
+    y = (4 * x) ** 0.5   
+    x_points.append(x)
+    y_points_pos.append(y) 
+    y_points_neg.append(-y)   
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 4x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+slip-15
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+y_values = np.linspace(0, 30, 50)
+for y in y_values:
+    x = (y**2) / 20   # x = y^2 / 20
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_negative = [-y for y in y_points]
+plt.plot(x_points, y_negative, 'o')
+plt.title("Parabola: y^2 = 20x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+
+slip-16
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 80, 80)
+for x in x_values:
+    y = (16 * x) ** 0.5   
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y)  
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 16x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+slip-17
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-7, 7, 100)
+for x in x_values:
+    y = (49 - x**2) ** 0.5   
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 49")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+slip-18
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points = []
+x_values = np.linspace(-10, 10, 60)
+for x in x_values:
+    y = (100 - x**2) ** 0.5   
+    x_points.append(x)
+    y_points.append(y)
+plt.plot(x_points, y_points, 'o')
+y_lower = [-y for y in y_points]
+plt.plot(x_points, y_lower, 'o')
+plt.title("Circle: x^2 + y^2 = 100")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
+
+slip-19
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 100, 50)
+for x in x_values:
+    y = (28 * x) ** 0.5  
+    x_points.append(x)
+    y_points_pos.append(y)    
+    y_points_neg.append(-y)   
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 28x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
+
+
+
+slip-20
+
+import matplotlib.pyplot as plt
+import numpy as np
+x_points = []
+y_points_pos = []
+y_points_neg = []
+x_values = np.linspace(0, 100, 100)
+for x in x_values:
+    y = (32 * x) ** 0.5   
+    x_points.append(x)
+    y_points_pos.append(y)  
+    y_points_neg.append(-y)   
+plt.plot(x_points, y_points_pos, 'o')
+plt.plot(x_points, y_points_neg, 'o')
+plt.title("Parabola: y^2 = 32x")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid()
+plt.show()
