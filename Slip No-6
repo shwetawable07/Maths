@@ -1,260 +1,73 @@
-Question 1-1
-
+Q.1] 1)
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Data
 x1 = np.linspace(-10, 10, 100)
 y1 = x1**2
-
 x2 = np.linspace(1, 20, 100)
 y2 = np.exp(2*x2 + 4)
-
-# Subplots (1 row, 2 columns)
-plt.subplot(1,2,1)
+plt.subplot(1, 2, 1)
 plt.plot(x1, y1)
 plt.title("f(x) = x^2")
-
-plt.subplot(1,2,2)
+plt.subplot(1, 2, 2)
 plt.plot(x2, y2)
 plt.title("g(x) = e^(2x+4)")
-
 plt.tight_layout()
-plt.show()
+plt.show() 
 
 
-Question 1-2
-
+2)
 import numpy as np
 import matplotlib.pyplot as plt
-
-x = np.linspace(-10, 10, 100)
+x = np.linspace(-10, 10, 50)
 y = x**2 + 5
-
-plt.plot(x, y, 'r^')  # triangle marker
+plt.plot(x, y, 'ro-') # red with marker
+plt.arrow(0, 0, 5, 0, head_width=2, color='black')
+plt.arrow(0, 0, 0, 50, head_width=2, color='black')
+plt.xlabel("x")
+plt.ylabel("y")
 plt.title("y = x^2 + 5")
 plt.show()
 
 
-Question 1-3
-
+3)
 import numpy as np
 import matplotlib.pyplot as plt
-
+from mpl_toolkits.mplot3d import Axes3D 
 x = np.linspace(0, 2*np.pi, 50)
 y = np.linspace(0, 2*np.pi, 50)
 X, Y = np.meshgrid(x, y)
 Z = np.sin(X**2 + Y**2)
-
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_wireframe(X, Y, Z)
-
+ax.plot_wireframe(X, Y, Z, color='brown')
+plt.title("Wireframe Plot")
 plt.show()
 
 
-Question 1-4
 
-from sympy import Point, Polygon
-import math
-
-points = []
-n = 5
-r = 4
-
-for i in range(n):
-    angle = 2*math.pi*i/n
-    points.append(Point(r*math.cos(angle), r*math.sin(angle)))
-
-poly = Polygon(*points)
-
-print("Area:", poly.area)
-
-# Scaling (x*3, y*2)
-scaled = [Point(p.x*3, p.y*2) for p in poly.vertices]
-print("Scaled:", scaled)
+4)
+from sympy import Point, RegularPolygon
+center = Point(0, 0) 
+polygon = RegularPolygon(center, 4, 5)
+print("Area =", polygon.area)
+scaled_vertices = [Point(p.x*3, p.y*2) for p in polygon.vertices]
+print("Scaled Vertices =", scaled_vertices)
 
 
-Question 1-5
 
-from sympy import Point, Polygon
-
-A = Point(2,2)
-B = Point(6,2)
-C = Point(6,6)
-D = Point(2,6)
-
-poly = Polygon(A,B,C,D)
-
-print("Area:", poly.area)
-print("Perimeter:", poly.perimeter)
-print("Angles:", poly.angles)
-
-
-Question 2-1
-
-import numpy as np
+Q.2] 1)
 import matplotlib.pyplot as plt
-
-points = np.array([[1,6],[0,8],[5,3]])
-
-# Shearing (x-direction by 5*y)
-shear = np.array([[1,5],[0,1]])
-sheared = np.dot(points, shear)
-
-# Reflection y-axis
-reflected = sheared * [-1,1]
-
-# Translation (+1, +4)
-translated = reflected + [1,4]
-
-def plot_shape(p, label):
-    p = np.vstack([p, p[0]])
-    plt.plot(p[:,0], p[:,1], label=label)
-
-plot_shape(points, "Original")
-plot_shape(translated, "Transformed")
-
+x = [1, 0, 5, 1]
+y = [6, 8, 3, 6]
+x_shear = [x[i] + 5*y[i] for i in range(len(x))]
+y_shear = y
+x_ref = [-i for i in x_shear]
+x_trans = [i + 1 for i in x_ref]
+y_trans = [i + 4 for i in y_shear]
+plt.plot(x, y, label="Original")
+plt.plot(x_shear, y_shear, label="Sheared")
+plt.plot(x_ref, y_shear, label="Reflected")
+plt.plot(x_trans, y_trans, label="Translated")
 plt.legend()
-plt.show()
-
-
-Question 2-2
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = 6
-theta = np.linspace(0, 2*np.pi, 75)
-
-x = r*np.cos(theta)
-y = r*np.sin(theta)
-
-plt.plot(x, y)
-plt.gca().set_aspect('equal')
-plt.title("Circle x^2 + y^2 = 36")
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+plt.title("Transformations")
+plt.show() 
